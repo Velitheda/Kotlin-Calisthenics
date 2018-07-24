@@ -1,0 +1,11 @@
+As a user, I want to generate a word of a given length
+
+As a user, I want to see a different word each time (unless rarely by chance)
+
+As a developer, I want to be able to generate exactly the same word again in case I need to debug
+
+As a user, I want to be able to pronounce the word
+
+As a user, I want consonants to be able to form digraphs
+
+As a user, I want to be able to specify the set of characters the engine chooses from
