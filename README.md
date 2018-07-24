@@ -5,7 +5,7 @@ the Object Calisthenics rules https://www.cs.helsinki.fi/u/luontola/tdd-2009/ext
 and also some of the Functional Calisthenics rules https://codurance.com/2017/10/12/functional-calisthenics/ 
 (as much as the language limitations of Kotlin will allow.)
 
-I will also challnge myself to follow TDD and BDD as much as possible
+I will also challenge myself to follow TDD and BDD as much as possible
 
 For following the evolving direction of the of the project, see User-Stories.txt as I will try to follow and approach
 of writing and then implementing them as I go along.
