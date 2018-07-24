@@ -6,11 +6,11 @@
  */
 
 fun main(args: Array<String>) {
-    val word = WordGenerator.generateWord(WordLength(5))
-    println(word)
+    val generatedWord = WordGenerator.generateWord(WordLength(5))
+    println(generatedWord.value)
 }
 
-data class GeneratedWord(val word: String)
+data class GeneratedWord(val value: String)
 data class WordLength(val length: Int)
 
 object WordGenerator {

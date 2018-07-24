@@ -7,6 +7,6 @@ class Test {
         // When a word is generated
         val generatedWord = WordGenerator.generateWord(wordLength)
         // Then it has a length equal to 5
-        assert(generatedWord.word.length == 5)
+        assert(generatedWord.value.length == 5)
     }
 }
