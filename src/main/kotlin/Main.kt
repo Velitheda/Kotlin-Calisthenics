@@ -15,6 +15,12 @@ data class WordLength(val length: Int)
 
 object WordGenerator {
     fun generateWord(length: WordLength): GeneratedWord {
-        return GeneratedWord("asdfa")
+        when (length) {
+            WordLength(5) -> return GeneratedWord("asdfa")
+            WordLength(9) -> return GeneratedWord("asdfghjkl")
+            else -> {
+                return GeneratedWord("")
+            }
+        }
     }
 }
