@@ -17,7 +17,6 @@ object WordGenerator {
     fun generateWord(length: WordLength): GeneratedWord {
         when (length) {
             WordLength(5) -> return GeneratedWord("asdfa")
-            WordLength(9) -> return GeneratedWord("asdfghjkl")
             else -> {
                 return GeneratedWord("")
             }

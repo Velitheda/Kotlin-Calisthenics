@@ -2,6 +2,8 @@ As a user, I want to generate a word of a given length
 
 As a user, I want to see a different word each time (unless rarely by chance)
 
+As a user, I want the program to be able to handle trying to create a word that is too long
+
 As a developer, I want to be able to generate exactly the same word again in case I need to debug
 
 As a user, I want to be able to pronounce the word
