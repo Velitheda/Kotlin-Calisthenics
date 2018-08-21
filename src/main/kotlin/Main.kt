@@ -7,22 +7,27 @@
 
 fun main(args: Array<String>) {
     val generatedWord = WordGenerator.generateWord(WordLength(5))
-    println(generatedWord.value)
+    println(generatedWord)
 }
 
-data class GeneratedWord(val value: String)
 data class WordLength(val value: Int)
+
+data class GeneratedWord(val value: List<FantasyLanguageCharacter>) {
+    override fun toString(): String {
+        return value.joinToString("")
+    }
+}
+
+data class FantasyLanguageCharacter(val value: Char)
 
 object WordGenerator {
     fun generateWord(length: WordLength): GeneratedWord {
-        val range = (1..length.value)
-        val generatedLetters = range.map{ generateLetter() }
-        val formattedWord = generatedLetters.joinToString("")
-
-        return GeneratedWord(formattedWord)
+        return GeneratedWord(
+                (1..length.value).map{ generateLetter() }
+        )
     }
 
-    fun generateLetter(): String {
-        return "a"
+    fun generateLetter(): FantasyLanguageCharacter {
+        return FantasyLanguageCharacter('a')
     }
 }

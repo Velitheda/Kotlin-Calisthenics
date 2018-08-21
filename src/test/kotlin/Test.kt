@@ -10,7 +10,7 @@ class Test {
         // When a word is generated
         val generatedWord = WordGenerator.generateWord(wordLength)
         // Then it has a value equal to 5
-        assertEquals(generatedWord.value.length, 5)
+        assertEquals(generatedWord.value.size, 5)
     }
 
     @Test fun wordWithLengthZeroIsEmptyString() {
@@ -29,7 +29,6 @@ class Test {
         // When a word is generated
         val generatedWord = WordGenerator.generateWord(wordLength)
         // Then it has a value equal to the random value
-        assertEquals(generatedWord.value.length, randomInt)
-
+        assertEquals(generatedWord.value.size, randomInt)
     }
 }
