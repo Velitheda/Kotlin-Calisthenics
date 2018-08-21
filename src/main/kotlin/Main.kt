@@ -11,15 +11,18 @@ fun main(args: Array<String>) {
 }
 
 data class GeneratedWord(val value: String)
-data class WordLength(val length: Int)
+data class WordLength(val value: Int)
 
 object WordGenerator {
     fun generateWord(length: WordLength): GeneratedWord {
-        when (length) {
-            WordLength(5) -> return GeneratedWord("asdfa")
-            else -> {
-                return GeneratedWord("")
-            }
-        }
+        val range = (1..length.value)
+        val generatedLetters = range.map{ generateLetter() }
+        val formattedWord = generatedLetters.joinToString("")
+
+        return GeneratedWord(formattedWord)
+    }
+
+    fun generateLetter(): String {
+        return "a"
     }
 }
