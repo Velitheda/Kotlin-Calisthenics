@@ -18,7 +18,11 @@ data class GeneratedWord(val value: List<FantasyLanguageCharacter>) {
     }
 }
 
-data class FantasyLanguageCharacter(val value: Char)
+data class FantasyLanguageCharacter(val value: Char){
+    override fun toString(): String {
+        return value.toString()
+    }
+}
 
 object WordGenerator {
     fun generateWord(length: WordLength): GeneratedWord {

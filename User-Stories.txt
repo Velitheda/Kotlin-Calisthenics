@@ -1,6 +1,6 @@
-As a user, I want to generate a word of a given length
+DONE: As a user, I want to generate a word of a given length
 
-As a user, I want to see a different word each time (unless rarely by chance)
+As a user, I want to see a different word each time when the same length is used (unless rarely by chance)
 
 As a user, I want the program to be able to handle trying to create a word that is too long
 
@@ -11,3 +11,9 @@ As a user, I want to be able to pronounce the word
 As a user, I want consonants to be able to form digraphs
 
 As a user, I want to be able to specify the set of characters the engine chooses from
+
+As a user, I want to be able to generate a small language by assigning 400 of the most common english words to a generated word,
+ with exactly the same grammar as English.
+
+As a user, I want to be able to translate an English phrase into my generated language, using the English word if it isn't found
+ in the language.
