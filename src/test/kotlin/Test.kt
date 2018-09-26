@@ -8,10 +8,11 @@ data class TestSeed(val value: Long)
 class Test {
 
     companion object {
-        lateinit var seed: TestSeed
+        lateinit var generator: Random
 
         @BeforeClass @JvmStatic fun setup() {
-            seed = TestSeed(Random().nextLong())
+            val seed: TestSeed = TestSeed(Random().nextLong())
+            generator = Random(seed.value)
             println("Random seed for test run: $seed")
         }
     }
@@ -37,7 +38,7 @@ class Test {
 
     @Test fun wordWithRandomLengthIsSameLength() {
         // Given a random word value
-        val randomInt = Math.abs(Random(seed.value).nextInt(100))
+        val randomInt = Math.abs(generator.nextInt(100))
         val wordLength = WordLength(randomInt)
         // When a word is generated
         val generatedWord = WordGenerator.generateWord(wordLength)
@@ -46,11 +47,10 @@ class Test {
     }
 
     @Test fun wordsAreDifferentEachTime() {
-        val randomInt = Math.abs(Random(seed.value).nextInt(100))
-        val wordLength = WordLength(randomInt)
+        val wordLength = WordLength(generator.nextInt(100))
         val generatedWord = WordGenerator.generateWord(wordLength)
 
-        val wordLength1 = WordLength(randomInt)
+        val wordLength1 = WordLength(generator.nextInt(100))
         val generatedWord1 = WordGenerator.generateWord(wordLength1)
 
         assertNotEquals(generatedWord.toString(), generatedWord1.toString())
