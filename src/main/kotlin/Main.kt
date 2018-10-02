@@ -1,3 +1,5 @@
+import java.util.*
+
 /*
     This is a fantasy language generator written as an excercise that will follow the Object Calisthenics rules
     https://www.cs.helsinki.fi/u/luontola/tdd-2009/ext/ObjectCalisthenics.pdf and also some of the
@@ -6,7 +8,8 @@
  */
 
 fun main(args: Array<String>) {
-    val generatedWord = WordGenerator.generateWord(WordLength(5))
+    val seed = System.currentTimeMillis()
+    val generatedWord = WordGenerator.generateWord(WordLength(5), seed)
     println(generatedWord)
 }
 
@@ -25,13 +28,16 @@ data class FantasyLanguageCharacter(val value: Char){
 }
 
 object WordGenerator {
-    fun generateWord(length: WordLength): GeneratedWord {
-        return GeneratedWord(
-                (1..length.value).map{ generateLetter() }
-        )
-    }
+    // This can be changed depending on what set of characters make up the language
+    val alphabet: List<Char> = listOf('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p',
+            'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
 
-    fun generateLetter(): FantasyLanguageCharacter {
-        return FantasyLanguageCharacter('a')
+    fun generateWord(length: WordLength, seed: Long): GeneratedWord {
+        val random = Random(seed)
+        return GeneratedWord(
+            (1..length.value).map{
+                 FantasyLanguageCharacter(alphabet[random.nextInt(alphabet.size - 1)])
+            }
+        )
     }
 }
